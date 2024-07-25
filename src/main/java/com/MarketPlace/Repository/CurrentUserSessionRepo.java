@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CurrentUserSessionRepo extends JpaRepository<CurrentUserSession,Integer> {
 
-    public CurrentUserSession findByUniqueId(String uniqueId);
+    public CurrentUserSession findByUniqueID(String uniqueID);
 
 
 }

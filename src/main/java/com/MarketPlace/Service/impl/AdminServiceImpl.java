@@ -22,6 +22,7 @@ public class AdminServiceImpl implements AdminService {
     private CurrentUserSessionRepo currentUserSessionRepo;
 
 
+    @Override
     public Admin signUpAdmin(Admin admin) throws AdminException {
 
         Optional<Admin> existAdminByUsername = adminRepo.findByAdminUsername(admin.getAdminUsername());
@@ -45,7 +46,7 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Admin updateAdminDetails(Admin admin, String key) throws AdminException, LoginException {
 
-        CurrentUserSession loggedInUser = currentUserSessionRepo.findByUniqueId(key);
+        CurrentUserSession loggedInUser = currentUserSessionRepo.findByUniqueID(key);
 
         if (loggedInUser==null){
             throw new LoginException("To update admin details please login first");
